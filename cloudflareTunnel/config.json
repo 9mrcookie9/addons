@@ -1,6 +1,6 @@
 {
   "name": "Cloudflare Tunnel",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "slug": "cloudflare_tunnel",
   "description": "Argo tunnel provided for free by Cloudflare",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
