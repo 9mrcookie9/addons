@@ -1,0 +1,17 @@
+name: Cloudflare Tunnel (64 bit)
+version: 1.5.1
+slug: cloudflared_tunnel_amd64
+description: Argo tunnel provided for free by Cloudflare
+arch:
+- aarch64
+startup: application
+boot: auto
+init: false
+options:
+  localUrl: http://homeassistant.local.hass.io:8123
+  tunnelName: homeassistant
+  hostname: homeassistant.example.com
+schema:
+  localUrl: url
+  tunnelName: str
+  hostname: str
