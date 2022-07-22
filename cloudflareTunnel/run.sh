@@ -18,11 +18,11 @@ bashio::log.info "Checking if we have saved files on the persistent volume"
 
 if ! bashio::fs.file_exists ${TUNNEL_ORIGIN_CERT} ; then
     bashio::log.info "Cert file does not exists. Logging in."
-    cloudflared tunnel login
+    /usr/local/bin/cloudflared tunnel login
     bashio::log.info "Logged in, cleanup pre-existing tunnels."
-    cloudflared tunnel cleanup ${TUNNEL_NAME}
+    /usr/local/bin/cloudflared tunnel cleanup ${TUNNEL_NAME}
     bashio::log.info "Deleting pre-existing tunnels."
-    cloudflared tunnel delete ${TUNNEL_NAME}
+    /usr/local/bin/cloudflared tunnel delete ${TUNNEL_NAME}
     bashio::log.info "Tunnel ${TUNNEL_NAME} deleted."
 
     bashio::log.info "Backup Cloudflared cert file to persistent volume"
@@ -34,4 +34,4 @@ else
 fi
 
 bashio::log.info "Starting Cloudflared tunnel"
-cloudflared --name ${TUNNEL_NAME}  --url ${LOCAL_URL} --hostname ${HOSTNAME}
+/usr/local/bin/cloudflared --name ${TUNNEL_NAME}  --url ${LOCAL_URL} --hostname ${HOSTNAME}
