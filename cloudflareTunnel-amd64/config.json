@@ -1,6 +1,6 @@
 {
   "name": "Cloudflare Tunnel AMD64 (64 bit, Intel / AMD)",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "slug": "cloudflare_tunnel_amd",
   "description": "Argo tunnel provided for free by Cloudflare",
   "arch": ["amd64"],
