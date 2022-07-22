@@ -1,10 +1,9 @@
 name: Cloudflare Tunnel aarch64 (64 bit, ARM)
 version: 1.5.1
-slug: cloudflare_tunnel_arm
+slug: cloudflared_tunnel_aarch64
 description: Argo tunnel provided for free by Cloudflare
 arch:
 - aarch64
-- arm64
 startup: application
 boot: auto
 init: false
