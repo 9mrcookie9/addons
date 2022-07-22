@@ -1,7 +1,7 @@
 {
   "name": "Cloudflare Tunnel aarch64 (64 bit, ARM)",
   "version": "1.5.0",
-  "slug": "cloudflare_tunnel",
+  "slug": "cloudflare_tunnel_arm",
   "description": "Argo tunnel provided for free by Cloudflare",
   "arch": ["aarch64","arm64"],
   "startup": "application",
