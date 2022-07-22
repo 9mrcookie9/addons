@@ -11,18 +11,18 @@ export TUNNEL_CRED_FILE=${CONFIG_DIR}/tunnel-cert.json
 export TUNNEL_FORCE_PROVISIONING_DNS=true
 
 bashio::log.info "Installing the latest version of cloudflared"
-curl -sL -O https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 && mv cloudflared-linux-amd64 /usr/local/bin/cloudflared &&  chmod +x /usr/local/bin/cloudflared
+curl -sL -O https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-aarch64 && mv cloudflared-linux-aarch64 /usr/local/bin/cloudflared &&  chmod +x /usr/local/bin/cloudflared
 chmod a+x /usr/local/bin/cloudflared
 
 bashio::log.info "Checking if we have saved files on the persistent volume"
 
 if ! bashio::fs.file_exists ${TUNNEL_ORIGIN_CERT} ; then
     bashio::log.info "Cert file does not exists. Logging in."
-    /usr/local/bin/cloudflared tunnel login
+    cloudflared tunnel login
     bashio::log.info "Logged in, cleanup pre-existing tunnels."
-    /usr/local/bin/cloudflared tunnel cleanup ${TUNNEL_NAME}
+    cloudflared tunnel cleanup ${TUNNEL_NAME}
     bashio::log.info "Deleting pre-existing tunnels."
-    /usr/local/bin/cloudflared tunnel delete ${TUNNEL_NAME}
+    cloudflared tunnel delete ${TUNNEL_NAME}
     bashio::log.info "Tunnel ${TUNNEL_NAME} deleted."
 
     bashio::log.info "Backup Cloudflared cert file to persistent volume"
@@ -34,4 +34,4 @@ else
 fi
 
 bashio::log.info "Starting Cloudflared tunnel"
-/usr/local/bin/cloudflared --name ${TUNNEL_NAME}  --url ${LOCAL_URL} --hostname ${HOSTNAME}
+cloudflared --name ${TUNNEL_NAME}  --url ${LOCAL_URL} --hostname ${HOSTNAME}
