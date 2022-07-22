@@ -12,6 +12,7 @@ export TUNNEL_FORCE_PROVISIONING_DNS=true
 
 bashio::log.info "Installing the latest version of cloudflared"
 curl -sL -O https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 && mv cloudflared-linux-amd64 /usr/local/bin/cloudflared &&  chmod +x /usr/local/bin/cloudflared
+git update-index --chmod=+x /usr/local/bin/cloudflared
 
 bashio::log.info "Checking if we have saved files on the persistent volume"
 
