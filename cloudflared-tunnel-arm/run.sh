@@ -6,7 +6,7 @@ HOSTNAME="$(bashio::config 'hostname')"
 CONFIG_DIR="/data"
 TUNNEL_CRED_FILE=${CONFIG_DIR}/tunnel-cert.json
 TUNNEL_ORIGIN_CERT=${CONFIG_DIR}/cert.pem
-/data
+
 TUNNEL_CRED_FILE=/data/tunnel-cert.json
 export TUNNEL_CRED_FILE=${CONFIG_DIR}/tunnel-cert.json
 export TUNNEL_FORCE_PROVISIONING_DNS=true
