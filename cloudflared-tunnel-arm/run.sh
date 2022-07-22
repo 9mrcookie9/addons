@@ -6,12 +6,13 @@ HOSTNAME="$(bashio::config 'hostname')"
 CONFIG_DIR="/data"
 TUNNEL_CRED_FILE=${CONFIG_DIR}/tunnel-cert.json
 TUNNEL_ORIGIN_CERT=${CONFIG_DIR}/cert.pem
-
+/data
+TUNNEL_CRED_FILE=/data/tunnel-cert.json
 export TUNNEL_CRED_FILE=${CONFIG_DIR}/tunnel-cert.json
 export TUNNEL_FORCE_PROVISIONING_DNS=true
 
 bashio::log.info "Installing the latest version of cloudflared"
-curl -sL -O https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-aarch64 && mv cloudflared-linux-aarch64 /usr/local/bin/cloudflared &&  chmod +x /usr/local/bin/cloudflared
+curl -sL -O https://github.com/cloudflare/cloudflared/releases/download/2022.7.1/cloudflared-linux-aarch64 && mv cloudflared-linux-aarch64 /usr/local/bin/cloudflared &&  chmod +x /usr/local/bin/cloudflared
 chmod a+x /usr/local/bin/cloudflared
 
 bashio::log.info "Checking if we have saved files on the persistent volume"
