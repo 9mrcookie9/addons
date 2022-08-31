@@ -1,4 +1,4 @@
-name: Cloudflare Tunnel (64 bit, 2022.7.1)
+name: Cloudflare Tunnel (64 bit, 2022.8.2)
 version: 1.5.5
 slug: cloudflared_tunnel_amd64
 description: Argo tunnel provided for free by Cloudflare
