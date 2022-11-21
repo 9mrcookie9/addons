@@ -1,5 +1,5 @@
-name: Cloudflare Tunnel aarch64 (64 bit, ARM, 2022.10.3)
-version: 2022.10.3
+name: Cloudflare Tunnel aarch64 (64 bit, ARM, 2022.11.0)
+version: 2022.11.0
 slug: cloudflared_tunnel_aarch64
 description: Argo tunnel provided for free by Cloudflare
 arch:

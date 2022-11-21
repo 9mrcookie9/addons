@@ -12,7 +12,7 @@ export TUNNEL_CRED_FILE=${CONFIG_DIR}/tunnel-cert.json
 export TUNNEL_FORCE_PROVISIONING_DNS=true
 
 bashio::log.info "Installing the latest version of cloudflared"
-curl -sL -O https://github.com/cloudflare/cloudflared/releases/download/2022.10.3/cloudflared-linux-arm64 && mv cloudflared-linux-arm64 /usr/local/bin/cloudflared &&  chmod +x /usr/local/bin/cloudflared
+curl -sL -O https://github.com/cloudflare/cloudflared/releases/download/2022.11.0/cloudflared-linux-arm64 && mv cloudflared-linux-arm64 /usr/local/bin/cloudflared &&  chmod +x /usr/local/bin/cloudflared
 chmod a+x /usr/local/bin/cloudflared
 
 bashio::log.info "Checking if we have saved files on the persistent volume"
