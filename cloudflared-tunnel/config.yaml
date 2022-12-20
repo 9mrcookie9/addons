@@ -1,5 +1,5 @@
-name: Cloudflare Tunnel (64 bit, 2022.11.0)
-version: 2022.11.0
+name: Cloudflare Tunnel (64 bit, 2022.12.1)
+version: 2022.12.1
 slug: cloudflared_tunnel_amd64
 description: Argo tunnel provided for free by Cloudflare
 arch:
@@ -15,4 +15,3 @@ schema:
   localUrl: url
   tunnelName: str
   hostname: str
-
